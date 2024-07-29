@@ -1,0 +1,19 @@
+.pet-details {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.pet-name {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.pet-breed,
+.pet-animal,
+.pet-description {
+  font-size: 1.2em;
+  margin: 5px 0;
+}

@@ -1,0 +1,7 @@
+.error-boundary {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #f00;
+  background-color: #fdd;
+  border-radius: 10px;
+}

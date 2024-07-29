@@ -36,9 +36,20 @@ This project is a Pet Listing website built using React.js. It incorporates erro
 2. Navigate to the project directory:
    ```bash
 
-   cd pet-listing-website
+   cd pet-listing
    
 3. Install the dependencies:
+   ```bash
+
+   npm install
+
+4. Set Up ESLint and Prettier:
+   ```bash
+
+   npm install eslint prettier eslint-plugin-react eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-prettier eslint-config-prettier --save-dev
+
+
+5. Install the dependencies:
    ```bash
 
    npm install
@@ -46,7 +57,7 @@ This project is a Pet Listing website built using React.js. It incorporates erro
 ## Running the Project
 
 
-4. In the project directory, you can run:
+1. In the project directory, you can run:
    ```bash
 
    npm start
@@ -123,9 +134,13 @@ Implement error handling for API calls.
 
 4. ## Routing:
 
-Use React Router for navigation between pages (e.g., home, pet details).
+Use React Router for navigation between pages (e.g., home, pet details):
+    ```bash    
 
-5. ## Error Handling:
+         npm install react-router-dom
+
+
+5.= ## Error Handling:
 
 Display user-friendly error messages for failed API requests.
 Implement a fallback UI using an ErrorBoundary component.

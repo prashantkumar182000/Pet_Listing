@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# Pet Listing Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+This project is a Pet Listing website built using React.js. It incorporates error handling and state management while following best coding practices, including the use of ESLint and Webpack/Vite for code quality and project bundling.
 
-## Available Scripts
+## Table of Contents
+- [Introduction](#introduction)
+- [Project Setup](#project-setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+- [Project Structure](#project-structure)
+- [APIs](#apis)
+- [Implementation Tasks](#implementation-tasks)
+- [Best Coding Practices](#best-coding-practices)
+- [Bonus Tasks](#bonus-tasks)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Project Setup
 
-### `npm start`
+### Prerequisites
+- Node.js and npm installed
+- Git installed
+- GitHub account
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/pet-listing-website.git
+   
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+2. Navigate to the project directory:
+   ```bash
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   cd pet-listing-website
+   
+3. Install the dependencies:
+   ```bash
 
-### `npm run build`
+   npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. In the project directory, you can run:
+   ```bash
 
-### `npm run eject`
+   npm start
+  
+### Project Structure
+The project is organized into meaningful directories for better maintainability:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+pet-listing-website/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── PetList.jsx
+│   │   ├── PetDetails.jsx
+│   │   ├── SearchForm.jsx
+│   │   └── ErrorBoundary.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── PetDetailsPage.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   │   ├── apiUtils.js
+│   │   └── errorUtils.js
+│   ├── App.js
+│   ├── index.js
+│   └── .env
+├── .eslintrc.js
+├── .prettierrc
+├── package.json
+├── README.md
+└── webpack.config.js (or vite.config.js)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## APIs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. List of Pets:
+URL: [http://pets-v2.dev-apis.com/pets
+](http://pets-v2.dev-apis.com/pets
+) to fetch a list of pets.
 
-## Learn More
+2. Pets by ID:
+URL: [http://pets-v2.dev-apis.com/pets?id=${id}](http://pets-v2.dev-apis.com/pets?id=${id}) to fetch a pet's details by its ID.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Breed by Animal Type:
+URL: [http://pets-v2.dev-apis.com/breeds?animal=${animal}
+](http://pets-v2.dev-apis.com/breeds?animal=${animal}
+) to fetch breeds for a specific animal type.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Search API:
+URL: [http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}
+](http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}
+) to search for pets based on animal type, location, and breed.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Implementation Tasks
 
-### Analyzing the Bundle Size
+1. ## Setting Up State Management:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Use React's useState, useContext, useEffect, etc. for managing component state.
+Implement context or a state management library like Redux for global state management if needed.
 
-### Making a Progressive Web App
+2. ## Creating Components:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+PetList: Displays a list of pets.
+PetDetails: Displays details of a selected pet.
+SearchForm: Allows users to search for pets based on animal type, location, and breed.
+ErrorBoundary: Catches and displays errors gracefully.
 
-### Advanced Configuration
+3. ## Fetching Data:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Create a service layer for making API calls.
+Use axios or fetch for HTTP requests.
+Implement error handling for API calls.
 
-### Deployment
+4. ## Routing:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Use React Router for navigation between pages (e.g., home, pet details).
 
-### `npm run build` fails to minify
+5. ## Error Handling:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Display user-friendly error messages for failed API requests.
+Implement a fallback UI using an ErrorBoundary component.
+
+6. ## State Handling:
+
+Ensure proper loading states using conditional rendering (e.g., spinners).
+Handle empty states gracefully (e.g., display a message when no pets are found).
